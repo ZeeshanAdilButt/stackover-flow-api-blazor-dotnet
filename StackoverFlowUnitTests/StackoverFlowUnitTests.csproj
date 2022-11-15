@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StackoverFlow.Models\StackoverflowAPI.Models.csproj" />
     <ProjectReference Include="..\StackoverFlow.Web\StackoverflowAPI.Web.csproj" />
   </ItemGroup>
 
