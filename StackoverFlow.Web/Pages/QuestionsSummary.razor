@@ -1,0 +1,44 @@
+﻿@page "/questions/"
+@inherits QuestionsSummaryBase
+
+<div>
+    <h4> Search for questions now </h4>
+
+    <label for="start">Start date:</label>
+
+    <input type="date" id="start" name="trip-start"
+           @bind-value="@FromDate">
+
+    <label for="start">To date:</label>
+
+    <input type="date" id="start" name="trip-start"
+           @bind-value="ToDate">
+
+    <input type="submit" @onclick="(()=> RefreshQuestions())" />
+
+</div>
+
+
+
+@if ((StackoverFlowQuestions == null && ErrorMessage == null) || isLoading)
+{
+    <DisplaySpinner />
+
+}
+else if (ErrorMessage != null)
+{
+    <DisplayError ErrorMessage="@ErrorMessage"></DisplayError>
+}
+else
+{
+    <h3 >Total Questions asked from '@FromDate' to '@ToDate'</h3>
+    <h5 class="mb-5">  @TotalNumberOfQuestions </h5>
+
+    <h3 >Total Unique Views </h3>
+    <h5 class="mb-5">  @TotalUniqueViews </h5>
+
+    <h3 class="">Total Unique Tags </h3>
+    <h5 class="mb-5">  @TotalUniqueTagsList </h5>
+
+
+}
